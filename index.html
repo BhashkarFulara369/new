@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Darpo</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+    <script type="text/javascript" src="script.js" defer></script>
+  </head>
+  <body>
+    <video src="bg.mp4" autoplay muted loop id="backgroundVideo"></video>
+    <nav id="sidebar">
+      <ul>
+        <li>
+          <span class="logo">Dravo</span>
+          <button onclick="toggleSidebar()" id="toggle-btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#e8eaed"
+            >
+              <path
+                d="m313-480 155 156q11 11 11.5 27.5T468-268q-11 11-28 11t-28-11L228-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T468-692q11 11 11 28t-11 28L313-480Zm264 0 155 156q11 11 11.5 27.5T732-268q-11 11-28 11t-28-11L492-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T732-692q11 11 11 28t-11 28L577-480Z"
+              />
+            </svg>
+          </button>
+        </li>
+        <li class="active">
+          <a href="index.html">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#e8eaed"
+            >
+              <path
+                d="M240-200h120v-200q0-17 11.5-28.5T400-440h160q17 0 28.5 11.5T600-400v200h120v-360L480-740 240-560v360Zm-80 0v-360q0-19 8.5-36t23.5-28l240-180q21-16 48-16t48 16l240 180q15 11 23.5 28t8.5 36v360q0 33-23.5 56.5T720-120H560q-17 0-28.5-11.5T520-160v-200h-80v200q0 17-11.5 28.5T400-120H240q-33 0-56.5-23.5T160-200Zm320-270Z"
+              />
+            </svg>
+            <span>Home</span>
+          </a>
+        </li>
+        <li>
+          <a>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#e8eaed"
+            >
+              <path
+                d="M520-640v-160q0-17 11.5-28.5T560-840h240q17 0 28.5 11.5T840-800v160q0 17-11.5 28.5T800-600H560q-17 0-28.5-11.5T520-640ZM120-480v-320q0-17 11.5-28.5T160-840h240q17 0 28.5 11.5T440-800v320q0 17-11.5 28.5T400-440H160q-17 0-28.5-11.5T120-480Zm400 320v-320q0-17 11.5-28.5T560-520h240q17 0 28.5 11.5T840-480v320q0 17-11.5 28.5T800-120H560q-17 0-28.5-11.5T520-160Zm-400 0v-160q0-17 11.5-28.5T160-360h240q17 0 28.5 11.5T440-320v160q0 17-11.5 28.5T400-120H160q-17 0-28.5-11.5T120-160Zm80-360h160v-240H200v240Zm400 320h160v-240H600v240Zm0-480h160v-80H600v80ZM200-200h160v-80H200v80Zm160-320Zm240-160Zm0 240ZM360-280Z"
+              />
+            </svg>
+            <span>Discription</span>
+          </a>
+        </li>
+        <li>
+          <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#e8eaed"
+            >
+              <path
+                d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h207q16 0 30.5 6t25.5 17l57 57h320q33 0 56.5 23.5T880-640v400q0 33-23.5 56.5T800-160H160Zm0-80h640v-400H447l-80-80H160v480Zm0 0v-480 480Zm400-160v40q0 17 11.5 28.5T600-320q17 0 28.5-11.5T640-360v-40h40q17 0 28.5-11.5T720-440q0-17-11.5-28.5T680-480h-40v-40q0-17-11.5-28.5T600-560q-17 0-28.5 11.5T560-520v40h-40q-17 0-28.5 11.5T480-440q0 17 11.5 28.5T520-400h40Z"
+              />
+            </svg>
+            <span>Filter</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#e8eaed"
+            >
+              <path
+                d="M480-361q-8 0-15-2.5t-13-8.5L268-556q-11-11-11-28t11-28q11-11 28-11t28 11l156 156 156-156q11-11 28-11t28 11q11 11 11 28t-11 28L508-372q-6 6-13 8.5t-15 2.5Z"
+              />
+            </svg>
+          </button>
+          <ul class="sub-menu">
+            <div>
+              <li><a href="#">Chart</a></li>
+              <li><a href="#">System</a></li>
+              <li><a href="#">site</a></li>
+            </div>
+          </ul>
+        </li>
+        <li>
+          <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#e8eaed"
+            >
+              <path
+                d="m221-313 142-142q12-12 28-11.5t28 12.5q11 12 11 28t-11 28L250-228q-12 12-28 12t-28-12l-86-86q-11-11-11-28t11-28q11-11 28-11t28 11l57 57Zm0-320 142-142q12-12 28-11.5t28 12.5q11 12 11 28t-11 28L250-548q-12 12-28 12t-28-12l-86-86q-11-11-11-28t11-28q11-11 28-11t28 11l57 57Zm339 353q-17 0-28.5-11.5T520-320q0-17 11.5-28.5T560-360h280q17 0 28.5 11.5T880-320q0 17-11.5 28.5T840-280H560Zm0-320q-17 0-28.5-11.5T520-640q0-17 11.5-28.5T560-680h280q17 0 28.5 11.5T880-640q0 17-11.5 28.5T840-600H560Z"
+              />
+            </svg>
+            <span>contact us</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#e8eaed"
+            >
+              <path
+                d="M480-361q-8 0-15-2.5t-13-8.5L268-556q-11-11-11-28t11-28q11-11 28-11t28 11l156 156 156-156q11-11 28-11t28 11q11 11 11 28t-11 28L508-372q-6 6-13 8.5t-15 2.5Z"
+              />
+            </svg>
+          </button>
+          <ul class="sub-menu">
+            <div>
+              <li><a href="#">Now </a></li>
+              <li><a href="#">Never</a></li>
+            </div>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <div id="maincontent">
+      <!--search-->
+      <div id="try">
+        <form action="">
+          <input type="search" placeholder="Sgmadar.">
+          <i class="fa fa-search"></i>
+      </form>
+      </div>
+      <!--search ends-->
+      <div id="heading">
+        <h1>Unlocking Space Science through Data Visualization</h1> 
+      </div>
+      <!--video for home page-->
+      <div id="videoborder">
+        <video src="./DNA.mp4" width="700px" autoplay loop controls muted></video>
+      </div>
+      <!--video ends-->
+      <div id="aboutheader">
+        <div id="aboutname379">OS-379</div>
+        <div id="researchparent379">Research Overview</div>
+        <div id="research379">In order to gain a better understanding of the mechanisms involved in metabolic disorders in response to microgravity, it is important to study the somatotrophic function of the pituitary gland controlling growth and anabolic processes in mammals. Previous inflight experiments have shown a progressive minimization of endocrine regulatory function and inhibition of GH production and secretion with increased flight time. The objective of this study was to determine the histological and cytokaryometric changes in the somatotroph cells of rats flown on SLS-2.'</div>
+        <div id="researchparent379">Methodology</div>
+        <div id="research379">Pituitary glands were fixed in Bouin's fixative and embedded in paraffin. Horizontal 4 millimeter thick sections were stained with paraldehyde fuchsin and Halmi's mixture to identify both basophilic cells and somatotrophs. The major ingredient of Halmi's mixture selectively stains pituitary somatotroph cells. Cytokaryometric examination of somatotroph cells was performed. In the pituitary of each flight and control rat, 100 somatotroph cells and their nuclei located along capillaries and between capillaries in glandular areas were outlined. Diameters and volumes of the cells and their nuclei were measured and statistically treated by means of routine morphometric methods. Somatotrophic cell status was determined from cytokaryometric data and visual evaluation of growth hormone in the cytoplasm.</div>
+        <a href="https://bhashkarfulara369.github.io/spacescience/">Visit W3Schools.com!</a>
+      </div>
+      <div id="aboutheader2">
+        <div id="aboutname379">OS-665</div>
+        <div id="researchparent379">Research Overview</div>
+        <div id="research379">Two important questions were addressed in these studies. First, does microgravity enhance vasoconstriction of cerebral arteries, which could contribute to inadequate cerebral perfusion and postflight orthostatic intolerance? Previous studies with hindlimb unloaded rats demonstrate simulated microgravity enhances cerebral artery vasoconstrictor properties. And second, previous results from STS-131 and STS-133 experiments have shown that vasoconstrictor properties of arteries from the mesentery and gastrocnemius muscle are diminished by spaceflight. This experiment addressed whether this impairment is limited to the arterial circulation, or whether the venous circulation is likewise impaired .Functional and structural studies were conducted on cerebral arteries and mesenteric veins to address whether the impairment of smooth muscle function occurs cerebral circulation, or is limited to the arterial circulation, i.e., whether smooth muscle cells on the venous side of the circulation are likewise affected.</div>
+        <div id="researchparent379">Methodology</div>
+        <div id="research379">Basilar and posterior communicating arteries were isolated for in vitro and mechanical testing. Myogenic vasoconstrictor responses and passive pressure-diameter responses were obtained in basilar arteries from 12 control and 7 flight animals. Vascular stiffness, as characterized via nanoindentation, was determined in posterior communicating arteries from 12 control and 7 flight animals. For mesenteric veins, norepinephrine dose response curves were obtained from 9 control and 3 flight animals .The cerebral arteries and mesenteric veins were isolated and placed in cold buffer solution at Kennedy Space Center (KSC) and transported to the University of Florida. Basilar arteries and mesenteric veins were mounted on glass pipettes to determine constrictor properties, as well as wall thickness and maximal lumen diameter via video microscopy.</div>
+        <div id="parentreadmore"><button type="button" id="readmore"><p id="childreadmore">Read More</p></button></div>
+      </div>
+      <div id="Aboutborder">
+        <div id="Aboutheading">About</div>
+      </div>
+    </div>
+  </body>
+</html>
